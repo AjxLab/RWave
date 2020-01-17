@@ -13,7 +13,7 @@ def read_wave(wavfile, is_nomalize=False):
     return (wav, fs)
 
 
-def write_wave(wavfile, fs, wav):
+def write_wave(wavfile, wav, fs):
     ## -----*----- .wavファイルに書き込み -----*----- ##
     if os.path.exists(wavfile):
         os.remove(wavfile)
