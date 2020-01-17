@@ -10,7 +10,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='rwave',
     packages=['rwave'],
-    install_requires=["numpy", "scipy"],
+    install_requires=["numpy", "scipy", "librosa"],
 
     version='0.1.0',
     license='MIT',
@@ -27,6 +27,6 @@ setup(
 
     classifiers=[
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python ::3.7',
+        'Programming Language :: Python :: 3.7',
     ],
 )
