@@ -1,4 +1,6 @@
 from .rwave import *
+from .wave_io import *
+
 
 __copyright__    = 'Copyright (C) 2020 Tatsuya Abe'
 __license__      = 'MIT'
