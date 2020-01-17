@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 from .rwave import *
 from .wave_io import *
-
+from .convert import *
 
 __copyright__    = 'Copyright (C) 2020 Tatsuya Abe'
 __license__      = 'MIT'

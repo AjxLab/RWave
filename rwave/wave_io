@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 import numpy as np
+import scipy.signal
 import scipy.io.wavfile
 import os
 
 
-def read_wave(wavfile, is_nomalize=False):
+def read_wave(wavfile):
     ## -----*----- .wavファイルの読み込み -----*----- ##
     fs, wav = scipy.io.wavfile.read(wavfile)
-    if is_nomalize:
-        wav = nomalize(wav)
-
     return (wav, fs)
 
 
@@ -20,13 +18,15 @@ def write_wave(wavfile, fs, wav):
     scipy.io.wavfile.write(wavfile, fs, wav)
 
 
-def nomalize(x, axis=None):
-    ## -----*----- 0~1に正規化 -----*----- ##
-    min = x.min(axis=axis, keepdims=True)
-    max = x.max(axis=axis, keepdims=True)
-    if not (max - min) == 0:
-        result = (x - min) / (max - min)
-    else:
-        result = x
+def convert_fs(wav, fs, to_fs, to_int=True):
+    ## -----*----- サンプリングレートを変換 -----*----- ##
+    # wav : 変換対象の音源
+    # fs  : 変換後のサンプリングレート
 
-    return result
+    converted = scipy.signal.resample(wav, int(wav.shape[0]*to_fs/fs))
+
+    if to_int:
+        converted = np.array(converted, dtype='int16')
+
+    return (converted, to_fs)
+
