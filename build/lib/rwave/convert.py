@@ -34,6 +34,5 @@ def to_mfcc(file, fs, n_mfcc=12):
     ## -----*----- 音声データをMFCCに変換 -----*----- ##
     x, _ = librosa.load(file, sr=fs)
     mfcc = librosa.feature.mfcc(x, sr=fs, n_mfcc=n_mfcc)
-    mfcc = np.reshape(mfcc, (mfcc.shape[0], mfcc.shape[1], 1))
 
     return np.array(mfcc, dtype=np.float32)
