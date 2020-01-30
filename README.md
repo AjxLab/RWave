@@ -2,6 +2,7 @@ RWave
 =====
 
 [![PyPi](https://badge.fury.io/py/rwave.svg)](https://pypi.python.org/pypi/rwave/)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 A utility that handle audio for Python.
 
