@@ -1,6 +1,8 @@
 RWave
 =====
 
+[![PyPi](https://badge.fury.io/py/rwave.svg)](https://pypi.python.org/pypi/rwave/)
+
 A utility that handle audio for Python.
 
 
