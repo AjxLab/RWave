@@ -12,7 +12,7 @@ setup(
     packages=['rwave'],
     install_requires=["numpy", "scipy", "librosa"],
 
-    version='0.1.1',
+    version='0.1.2',
     license='MIT',
 
     author='Tatsuya Abe',

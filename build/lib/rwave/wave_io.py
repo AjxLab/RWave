@@ -15,7 +15,8 @@ def read_wave(wavfile, is_nomalize=False):
 
 def write_wave(wavfile, wav, fs):
     ## -----*----- .wavファイルに書き込み -----*----- ##
-    os.makedirs(os.path.dirname(wavfile), exist_ok=True)
+    if not os.path.dirname(wavfile) == '':
+        os.makedirs(os.path.dirname(wavfile), exist_ok=True)
     if os.path.exists(wavfile):
         os.remove(wavfile)
     scipy.io.wavfile.write(wavfile, fs, wav)
