@@ -26,7 +26,7 @@ rwave.nomalize(wave)
 wave, fs = rwave.convert_fs(wave, 16000, 8000)
 
 # Convert audio length (->5.0s)
-wave, fs = rwave.convert_fs(wave, 16000, 5.0)
+wave, fs = rwave.convert_sec(wave, 16000, 5.0)
 
 # Convert to MFCC
 mfcc = rwave.to_mfcc('wave file path', 16000)
